@@ -1,22 +1,36 @@
-import React, {useState} from 'react';
+import React, { useState } from "react";
+import "./App.css";
 import Order from "./Order";
 
 function App() {
-    const [Tab, setTab] = useState("Order");
-    let tab;
-    if (Tab === "Order") {
-        tab = <Order />;
-    }
-    else if (Tab === "My Orders") {
-        tab = <div></div>;
-    }
+    const [activeTab, setActiveTab] = useState("Order");
+
+    const tabs = [
+        { id: "Order", label: "Order", content: <Order /> },
+        { id: "My Orders", label: "My Orders", content: <div>Your orders will appear here</div> }
+    ];
+
     return (
-    <div >
-        <button onClick = {() => setTab("Order")}>Order</button>
-        <button onClick = {() => setTab("My Orders")}>My Orders</button>
-        <div>{tab}</div>
-    </div>
-  );
+        <div>
+            {/* Tab Buttons */}
+            <div className="Button-Container">
+                {tabs.map((tab) => (
+                    <button
+                        key={tab.id}
+                        className={`tab_buttons ${activeTab === tab.id ? "is_active" : ""}`}
+                        onClick={() => setActiveTab(tab.id)}
+                    >
+                        {tab.label}
+                    </button>
+                ))}
+            </div>
+
+            {/* Tab Content */}
+            <div style={{ marginTop: "20px" }}>
+                {tabs.find((tab) => tab.id === activeTab)?.content}
+            </div>
+        </div>
+    );
 }
 
 export default App;
