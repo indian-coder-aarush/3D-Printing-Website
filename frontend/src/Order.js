@@ -18,7 +18,7 @@ function Order(){
         }
     }
     return(
-        <div>
+        <div className = "page">
             <label htmlFor="Name">Name: </label>
             <input type="text"
                    value = {Name}
