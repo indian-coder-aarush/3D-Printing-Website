@@ -7,7 +7,7 @@ function App() {
     if (Tab === "Order") {
         tab = <Order />;
     }
-    else if (Tab === "Order") {
+    else if (Tab === "My Orders") {
         tab = <div></div>;
     }
     return (
