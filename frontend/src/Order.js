@@ -22,8 +22,8 @@ function Order(){
     }
 
     let fields = [
-        {id:"name",label:"Name",value:formData.Name ,type:'text'},
-        {id:"address",label:"Address",value:formData.Address,type:'text'},
+        {id:"Name",label:"Name",value:formData.Name ,type:'text'},
+        {id:"Address",label:"Address",value:formData.Address,type:'text'},
     ]
     return(
         <div className = "page">
