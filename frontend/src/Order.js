@@ -19,20 +19,22 @@ function Order(){
     }
     return(
         <div className = "page">
-            <label htmlFor="Name">Name: </label>
-            <input type="text"
-                   value = {Name}
-                   id="Name"
-                   onChange={(e) => Handle_change(e,"name")}/>
-
-            <label htmlFor="Adress">Address: </label>
-            <input type="text"
-                   value = {Address}
-                   id="Adress"
-                   onChange={(e) => Handle_change(e,"address")}/>
-
-            <button onClick = {Button_on_click} >Submit</button>
-
+            <div className = "form-container">
+                    <label htmlFor="Name">Name: </label>
+                    <input className = "input_field"
+                           type="text"
+                           value = {Name}
+                           id="Name"
+                           onChange={(e) => Handle_change(e,"name")}/>
+                    <label htmlFor="Adress">Address: </label>
+                    <input className = "input_field"
+                           type="text"
+                           value = {Address}
+                           id="Adress"
+                           onChange={(e) => Handle_change(e,"address")}/>
+            </div>
+            <br/>
+            <button className = "tab_buttons_order" onClick = {Button_on_click} >Submit</button>
         </div>
     );
 }

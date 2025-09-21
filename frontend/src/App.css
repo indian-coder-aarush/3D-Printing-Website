@@ -77,3 +77,15 @@ body{
     border-color: #00ffff;
     box-shadow: 0 0 8px #00ffff;
 }
+
+.input_field{
+    font-family: 'JetBrains Mono', 'Inter', 'Montserrat', sans-serif;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+.form-container {
+    display: grid;
+    grid-template-columns: 100px 300px;
+    grid-template-rows: 50px 50px;
+}
