@@ -9,7 +9,7 @@ function App() {
     const tabs = [
         { id: "Order", label: "Order", content: <Order /> },
         { id: "My Orders", label: "My Orders", content: <div>Your orders will appear here</div> },
-        { id: "About", label: "About", content: <About />}
+        { id: "About", label: "About", content: <About activeTab={activeTab} setActiveTab={setActiveTab}/>}
     ];
 
     return (
