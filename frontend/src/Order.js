@@ -3,7 +3,8 @@ import React,{useState} from 'react'
 function Order(){
     const [formData, setFormData] = useState({
         Name: "",
-        Address: ""
+        Address: "",
+        ThreeDFile: HTMLUnknownElement
     });
 
     function Button_on_click(){
@@ -24,6 +25,7 @@ function Order(){
     let fields = [
         {id:"Name",label:"Name",value:formData.Name ,type:'text'},
         {id:"Address",label:"Address",value:formData.Address,type:'text'},
+        {id:"3D File",label:"3D file",value:formData.ThreeDFile,type:'file'}
     ]
     return(
         <div className = "page">
