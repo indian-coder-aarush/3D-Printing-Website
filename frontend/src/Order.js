@@ -6,6 +6,8 @@ function Order(){
         Address: "",
     });
 
+    const [File, setFile] = useState(null);
+
     function Button_on_click(){
         let resetData = {};
         fields.forEach(f => {
@@ -19,6 +21,10 @@ function Order(){
             ...prev,
             [field]: event.target.value
         }));
+    }
+
+    function FileUploaded(event){
+        setFile(event.target.files[0]);
     }
 
     let fields = [
@@ -39,7 +45,8 @@ function Order(){
                     </React.Fragment>
                 )}
                 <label htmlFor="fileInput" className="tab_buttons">Upload</label>
-                <input type="file" id="fileInput" style={{display : "none"}}/>
+                <input type="file" id="fileInput" style={{display : "none"}} onChange = {FileUploaded}/>
+                {File && <p>Selected file: {File.name}</p>}
             </div>
             <br/>
             <button className="tab_buttons" onClick = {Button_on_click} >Submit</button>
