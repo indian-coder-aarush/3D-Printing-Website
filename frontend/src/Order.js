@@ -14,6 +14,7 @@ function Order(){
             resetData[f.id] = "";
         });
         setFormData(resetData);
+        setFile(null);
     }
 
     function Handle_change(event, field){
@@ -46,7 +47,7 @@ function Order(){
                 )}
                 <label htmlFor="fileInput" className="tab_buttons">Upload</label>
                 <input type="file" id="fileInput" style={{display : "none"}} onChange = {FileUploaded}/>
-                {File && <p>Selected file: {File.name}</p>}
+                {File && <p className = "selected-file">Selected file: {File.name}</p>}
             </div>
             <br/>
             <button className="tab_buttons" onClick = {Button_on_click} >Submit</button>
