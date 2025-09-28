@@ -93,3 +93,13 @@ body{
     grid-template-columns: 100px 300px;
     grid-template-rows: 50px 50px;
 }
+
+.custom-file-upload {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: sans-serif;
+    /* Add more styles as needed */
+}
