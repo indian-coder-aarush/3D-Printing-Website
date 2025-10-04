@@ -1,4 +1,4 @@
-function About({activeTab, setActiveTab}) {
+function About({setActiveTab}) {
     return(
         <div>
             <h1 className = "Heading">3D PRINTERS</h1>

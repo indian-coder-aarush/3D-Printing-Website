@@ -65,20 +65,21 @@ function Order() {
                 <input type="file" id="fileInput" style={{ display: "none" }} onChange={FileUploaded} />
                 {file && <p className="selected-file">Selected file: {file.name}</p>}
             </div>
-            <br />
-            <button className="tab_buttons" onClick={Button_on_click}>Submit</button>
-            <div style={{ width: "400px", height: "600px", margin: "auto" }}>
-            {file && (
+            <p>Preview</p>
+            <div className = "canvas">
                 <Canvas>
                     <ambientLight intensity={0.5} />
                     <directionalLight position={[10, 10, 5]} intensity={1} />
-                    <Suspense fallback={null}>
-                        <ModelManual file={Url} />
-                    </Suspense>
+                    {Url &&
+                        <Suspense fallback={null}>
+                            <ModelManual file={Url} />
+                        </Suspense>
+                    }
                     <OrbitControls />
                 </Canvas>
-            )}
             </div>
+            <br />
+            <button className="tab_buttons" onClick={Button_on_click}>Submit</button>
         </div>
     );
 }
