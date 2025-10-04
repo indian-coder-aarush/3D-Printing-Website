@@ -3,8 +3,8 @@ import { Canvas, useLoader } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
-function ModelManual({ url }) {
-    const gltf = useLoader(GLTFLoader, url);
+function ModelManual({ file }) {
+    const gltf = useLoader(GLTFLoader, file);
     return <primitive object={gltf.scene} scale={1.5} />;
 }
 
@@ -15,7 +15,7 @@ function Order() {
     });
 
     const [file, setFile] = useState(null);
-    const [modelUrl, setModelUrl] = useState(null);
+    const [Url, setUrl] = useState(null);
 
     function Button_on_click() {
         let resetData = {};
@@ -24,7 +24,6 @@ function Order() {
         });
         setFormData(resetData);
         setFile(null);
-        setModelUrl(null);
     }
 
     function Handle_change(event, field) {
@@ -38,13 +37,7 @@ function Order() {
         let file = event.target.files[0];
         if (file) {
             setFile(file);
-
-            if (file.name.endsWith(".glb") || file.name.endsWith(".gltf")) {
-                const url = URL.createObjectURL(file);
-                setModelUrl(url);
-            } else {
-                setModelUrl(null); // prevent errors for non-GLTF files
-            }
+            setUrl(URL.createObjectURL(file));
         }
     }
 
@@ -75,12 +68,12 @@ function Order() {
             <br />
             <button className="tab_buttons" onClick={Button_on_click}>Submit</button>
             <div style={{ width: "400px", height: "600px", margin: "auto" }}>
-            {modelUrl && (
+            {file && (
                 <Canvas>
                     <ambientLight intensity={0.5} />
                     <directionalLight position={[10, 10, 5]} intensity={1} />
                     <Suspense fallback={null}>
-                        <ModelManual url={modelUrl} />
+                        <ModelManual file={Url} />
                     </Suspense>
                     <OrbitControls />
                 </Canvas>
