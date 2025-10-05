@@ -22,9 +22,10 @@ function Order({ HandleChange, prevOrders}) {
         fields.forEach(f => {
             resetData[f.id] = "";
         });
-        HandleChange([...prevOrders, resetData]);
+        HandleChange([...prevOrders, formData]);
         setFormData(resetData);
         setFile(null);
+        setUrl(null);
     }
 
     function Handle_change(event, field) {

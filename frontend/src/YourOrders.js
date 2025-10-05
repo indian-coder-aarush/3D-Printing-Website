@@ -1,11 +1,12 @@
 import OrderCard from "./OrderCard.js"
 
-function YourOrders(orders){
+function YourOrders({orders}){
+    console.log(orders);
     return(
         <div>
             {orders.map(order => {
                 return(<OrderCard Name = {order.Name}
-                                  Adress = {order.Adress}/>)
+                                  Address = {order.Address}/>)
             })
             }
         </div>

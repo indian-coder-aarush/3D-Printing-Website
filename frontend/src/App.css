@@ -108,3 +108,11 @@ body{
     margin-right: 200px;
     background-color: #26292b;
 }
+
+.order-card{
+    background: rgb(44, 46, 52);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #00ffff;
+    margin-right: 100px;
+}
