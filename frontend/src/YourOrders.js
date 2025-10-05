@@ -4,8 +4,8 @@ function YourOrders(orders){
     return(
         <div>
             {orders.map(order => {
-                return(<OrderCard Name = order.name
-                                  Adress = order.adress/>)
+                return(<OrderCard Name = {order.Name}
+                                  Adress = {order.Adress}/>)
             })
             }
         </div>

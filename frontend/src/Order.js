@@ -8,7 +8,7 @@ function ModelManual({ file }) {
     return <primitive object={gltf.scene} scale={1.5} />;
 }
 
-function Order() {
+function Order({ HandleChange, prevOrders}) {
     const [formData, setFormData] = useState({
         Name: "",
         Address: "",
@@ -22,6 +22,7 @@ function Order() {
         fields.forEach(f => {
             resetData[f.id] = "";
         });
+        HandleChange([...prevOrders, resetData]);
         setFormData(resetData);
         setFile(null);
     }

@@ -2,13 +2,15 @@ import React, { useState } from "react";
 import "./App.css";
 import Order from "./Order";
 import About from "./About";
+import YourOrders from "./YourOrders";
 
 function App() {
     const [activeTab, setActiveTab] = useState("Order");
+    const [orders, setOrders] = useState([]);
 
     const tabs = [
-        { id: "Order", label: "Order", content: <Order /> },
-        { id: "My Orders", label: "My Orders", content: <div>Your orders will appear here</div> },
+        { id: "Order", label: "Order", content: <Order HandleChange={setOrders} prevOrders={orders}/> },
+        { id: "My Orders", label: "My Orders", content: <YourOrders orders = {orders}/> },
         { id: "About", label: "About", content: <About activeTab={activeTab} setActiveTab={setActiveTab}/>}
     ];
 
