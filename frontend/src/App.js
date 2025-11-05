@@ -5,7 +5,7 @@ import About from "./About";
 import YourOrders from "./YourOrders";
 
 function App() {
-    const [activeTab, setActiveTab] = useState("Order");
+    const [activeTab, setActiveTab] = useState("About");
     const [orders, setOrders] = useState([]);
 
     const tabs = [
